@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  NFCReadDemo-iOS-SwiftUI
 //
-//  Created by Roro Solutions LLP on 21/08/23.
+//  Created by Gaurav Tak on 21/08/23.
 //
 
 import SwiftUI
