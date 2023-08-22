@@ -33,7 +33,6 @@ struct NFCNotAvailableView: View {
                     }
                     .padding([.leading, .trailing], 30)
                 }
-                .accessibility(identifier: "button--cardScanAlertDismissButton")
                 .frame(height: 45)
             }
         }
