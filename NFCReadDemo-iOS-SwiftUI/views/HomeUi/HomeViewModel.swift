@@ -20,6 +20,19 @@ class HomeViewModel: HomeViewModelProtocol {
     @Published var shouldShowNFCPadPersonBottomView = false
     @Published var isShowProduct = false
     
+    private var nfcScanner = NFCScanner()
+    
+    func scanNFC() {
+        if nfcScanner.homeViewModel == nil {
+            nfcScanner.homeViewModel = self
+        }
+        nfcScanner.scan()
+    }
+    
+    func stopScanningNFC() {
+        nfcScanner.stopScan()
+    }
+    
     func processNFCCardData(nfcScannedDataValue: String) {
         // Create the HTTP request
         //retrieve data using nfcScannedDataValue, here we are getting DummyDataUsingApi
