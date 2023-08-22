@@ -28,6 +28,7 @@ struct HomeView: View {
                 .cornerRadius(10)
                 .shadow(radius: 10)
             Spacer()
+            NFCScannerBottomView(homeViewModel: viewModel).frame(maxHeight: .infinity, alignment: .bottom)
         }
         .padding()
     }

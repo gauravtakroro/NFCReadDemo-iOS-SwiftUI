@@ -13,6 +13,11 @@
 		939B717B2A929ABB00A535CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939B717A2A929ABB00A535CC /* Preview Assets.xcassets */; };
 		939B71832A92A15D00A535CC /* NFCNotAvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B71822A92A15D00A535CC /* NFCNotAvailableView.swift */; };
 		939B71852A92A1AA00A535CC /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939B71842A92A1AA00A535CC /* ColorAssets.xcassets */; };
+		93A21DF02A95325D00D64611 /* NFCScannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A21DEF2A95325D00D64611 /* NFCScannerBottomView.swift */; };
+		93A21DF22A9532EF00D64611 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A21DF12A9532EF00D64611 /* HomeView.swift */; };
+		93A21DF52A9534CF00D64611 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A21DF42A9534CF00D64611 /* HomeViewModel.swift */; };
+		93A21DF82A95367400D64611 /* NFCScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A21DF72A95367400D64611 /* NFCScanner.swift */; };
+		93A21DFB2A9536F800D64611 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A21DFA2A9536F800D64611 /* Data+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		939B717A2A929ABB00A535CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		939B71822A92A15D00A535CC /* NFCNotAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNotAvailableView.swift; sourceTree = "<group>"; };
 		939B71842A92A1AA00A535CC /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		93A21DEF2A95325D00D64611 /* NFCScannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCScannerBottomView.swift; sourceTree = "<group>"; };
+		93A21DF12A9532EF00D64611 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		93A21DF42A9534CF00D64611 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		93A21DF72A95367400D64611 /* NFCScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCScanner.swift; sourceTree = "<group>"; };
+		93A21DFA2A9536F800D64611 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,8 @@
 		939B71722A929AB900A535CC /* NFCReadDemo-iOS-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				93A21DF62A95365F00D64611 /* nfc_classes */,
+				93A21DF92A9536CA00D64611 /* extensions */,
 				939B71812A92A12F00A535CC /* views */,
 				939B71732A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift */,
 				939B71752A929AB900A535CC /* ContentView.swift */,
@@ -76,9 +88,36 @@
 		939B71812A92A12F00A535CC /* views */ = {
 			isa = PBXGroup;
 			children = (
-				939B71822A92A15D00A535CC /* NFCNotAvailableView.swift */,
+				93A21DF32A9534A600D64611 /* HomeUi */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		93A21DF32A9534A600D64611 /* HomeUi */ = {
+			isa = PBXGroup;
+			children = (
+				939B71822A92A15D00A535CC /* NFCNotAvailableView.swift */,
+				93A21DEF2A95325D00D64611 /* NFCScannerBottomView.swift */,
+				93A21DF12A9532EF00D64611 /* HomeView.swift */,
+				93A21DF42A9534CF00D64611 /* HomeViewModel.swift */,
+			);
+			path = HomeUi;
+			sourceTree = "<group>";
+		};
+		93A21DF62A95365F00D64611 /* nfc_classes */ = {
+			isa = PBXGroup;
+			children = (
+				93A21DF72A95367400D64611 /* NFCScanner.swift */,
+			);
+			path = nfc_classes;
+			sourceTree = "<group>";
+		};
+		93A21DF92A9536CA00D64611 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				93A21DFA2A9536F800D64611 /* Data+Extensions.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +191,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A21DF82A95367400D64611 /* NFCScanner.swift in Sources */,
 				939B71762A929AB900A535CC /* ContentView.swift in Sources */,
+				93A21DF52A9534CF00D64611 /* HomeViewModel.swift in Sources */,
 				939B71832A92A15D00A535CC /* NFCNotAvailableView.swift in Sources */,
+				93A21DF02A95325D00D64611 /* NFCScannerBottomView.swift in Sources */,
+				93A21DFB2A9536F800D64611 /* Data+Extensions.swift in Sources */,
+				93A21DF22A9532EF00D64611 /* HomeView.swift in Sources */,
 				939B71742A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
