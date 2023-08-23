@@ -102,9 +102,14 @@ extension NFCScanner: NFCNDEFReaderSessionDelegate {
                     print("NFC Scanner -> readerSession -> hex = ", hex)
 
                     if var tag = String(data: firstRecord.payload, encoding: .utf8) {
-                        tag = tag.trimmingCharacters(in: .whitespaces)
-                        print("NFC Scanner -> readerSession -> tag = ", tag)
-                        self.homeViewModel?.processNFCCardData(nfcScannedDataValue: tag)
+                       // process the tag to remove whitespacesAndNewlines
+                        tag = tag.trimmingCharacters(in: .whitespacesAndNewlines)
+                        // process the tag to remove any other invalid char (only allowed isLetter, isNumber, isSymbol)
+                        tag = tag.filter { $0.isLetter || $0.isNumber || $0.isSymbol}
+                        // if en is available in starting, check accordingly and process
+                        let tagValue = tag.hasPrefix("en") ? String(tag.dropFirst(2)) : tag
+                        print("NFC Scanner -> readerSession -> tag & tagValue  = ", tag, tagValue)
+                        self.homeViewModel?.processNFCCardData(nfcScannedDataValue: tagValue)
                     }
                     self.stopScan()
                 }
