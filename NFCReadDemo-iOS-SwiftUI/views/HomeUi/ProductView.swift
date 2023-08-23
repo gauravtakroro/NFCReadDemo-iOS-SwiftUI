@@ -15,7 +15,7 @@ struct ProductView: View {
     
     var body: some View {
         VStack (alignment: .leading) {
-            Text("Scanned NFC Card Value: \(nfcCardDataValue)").font(.system(size: 16)).padding(.top, 8)
+            Text("Scanned NFC Card Value: \(nfcCardDataValue)").font(.system(size: 16))
             Text("Scanned Product Details").font(.system(size: 24))
             
             HStack {
