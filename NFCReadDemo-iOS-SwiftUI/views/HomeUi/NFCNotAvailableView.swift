@@ -25,13 +25,13 @@ struct NFCNotAvailableView: View {
                     }
                 }) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color("NFCDemoBlack"))
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundColor(Color("NFCDemoBlue"))
                         Text("Okay")
                             .font(.system(size: 18))
                             .foregroundColor(Color("NFCDemoWhite"))
                     }
-                    .padding([.leading, .trailing], 30)
+                    .padding([.leading, .trailing], 28)
                 }
                 .frame(height: 45)
             }

@@ -5,7 +5,6 @@
 //  Created by Gaurav Tak on 22/08/23.
 //
 
-
 import SwiftUI
 import CoreNFC
 
