@@ -11,14 +11,17 @@ protocol HomeViewModelProtocol: ObservableObject {
     var shouldShowNFCNotAvailableView: Bool { get set }
     var shouldShowNFCPadPersonBottomView: Bool { get set }
     var isShowProduct: Bool { get set }
+    var product: Product { get set }
+    var lastScannedNFCDataValue: String { get set }
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    var lastScannedNFCDataValue: String?
+    @Published var lastScannedNFCDataValue: String = ""
     
     @Published var shouldShowNFCNotAvailableView = false
     @Published var shouldShowNFCPadPersonBottomView = false
     @Published var isShowProduct = false
+    @Published var product = Product()
     
     private var nfcScanner = NFCScanner()
     
@@ -36,7 +39,11 @@ class HomeViewModel: HomeViewModelProtocol {
     func processNFCCardData(nfcScannedDataValue: String) {
         // Create the HTTP request
         //retrieve data using nfcScannedDataValue, here we are getting DummyDataUsingApi
-        getDummyDataUsingApi(nfcScannedDataValue: nfcScannedDataValue)
+        DispatchQueue.main.async {
+            self.lastScannedNFCDataValue = nfcScannedDataValue
+            self.getDummyDataUsingApi(nfcScannedDataValue: nfcScannedDataValue)
+        }
+        
     }
     
     func getDummyDataUsingApi(nfcScannedDataValue: String) {
@@ -61,12 +68,23 @@ class HomeViewModel: HomeViewModelProtocol {
             if let response = response as? HTTPURLResponse {
                 print("Response HTTP Status code: \(response.statusCode)")
             }
-            
-            // Convert HTTP Response Data to a simple String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
+            let decoder = JSONDecoder()
+            if let data = data {
+                do {
+                   let productValue = try decoder.decode(Product.self, from: data)
+                    DispatchQueue.main.async {
+                        self.product = productValue
+                        self.isShowProduct = true
+                    }
+                    print(self.product)
+                } catch {
+                    print(error.localizedDescription)
+                }
+                // Convert HTTP Response Data to a simple String
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print("Response data string:\n \(dataString)")
+                }
             }
-            
         }
         task.resume()
     }
