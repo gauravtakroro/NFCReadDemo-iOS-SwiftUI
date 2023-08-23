@@ -25,7 +25,7 @@ struct NFCScannerBottomView: View {
                 ZStack {
                     Color("NFCDemoBlue")
                     HStack {
-                        Image("waves_signals")
+                        Image(systemName: "dot.radiowaves.left.and.right")
                             .resizable()
                             .renderingMode(.template)
                             .aspectRatio(contentMode: .fit)
