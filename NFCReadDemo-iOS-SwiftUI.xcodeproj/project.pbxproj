@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9304BE8E2A967556004B0AE6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304BE8D2A967556004B0AE6 /* Product.swift */; };
 		939B71742A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B71732A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift */; };
 		939B71762A929AB900A535CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B71752A929AB900A535CC /* ContentView.swift */; };
 		939B71782A929ABB00A535CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939B71772A929ABB00A535CC /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		9304BE8A2A9672BF004B0AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9304BE8D2A967556004B0AE6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		939B71702A929AB900A535CC /* NFCReadDemo-iOS-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFCReadDemo-iOS-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		939B71732A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReadDemo_iOS_SwiftUIApp.swift; sourceTree = "<group>"; };
 		939B71752A929AB900A535CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9304BE8C2A96753B004B0AE6 /* model_classes */ = {
+			isa = PBXGroup;
+			children = (
+				9304BE8D2A967556004B0AE6 /* Product.swift */,
+			);
+			path = model_classes;
+			sourceTree = "<group>";
+		};
 		939B71672A929AB900A535CC = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 				93A21DF62A95365F00D64611 /* nfc_classes */,
 				93A21DF92A9536CA00D64611 /* extensions */,
 				939B71812A92A12F00A535CC /* views */,
+				9304BE8C2A96753B004B0AE6 /* model_classes */,
 				939B71732A929AB900A535CC /* NFCReadDemo_iOS_SwiftUIApp.swift */,
 				939B71752A929AB900A535CC /* ContentView.swift */,
 				939B71772A929ABB00A535CC /* Assets.xcassets */,
@@ -197,6 +208,7 @@
 			files = (
 				93A21DF82A95367400D64611 /* NFCScanner.swift in Sources */,
 				939B71762A929AB900A535CC /* ContentView.swift in Sources */,
+				9304BE8E2A967556004B0AE6 /* Product.swift in Sources */,
 				93A21DF52A9534CF00D64611 /* HomeViewModel.swift in Sources */,
 				939B71832A92A15D00A535CC /* NFCNotAvailableView.swift in Sources */,
 				93A21DF02A95325D00D64611 /* NFCScannerBottomView.swift in Sources */,
